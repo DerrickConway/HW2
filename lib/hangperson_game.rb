@@ -17,9 +17,9 @@ class HangpersonGame
         end
          char = char.gsub(/[\s,]/ ,"")
         
-        @charNum = char.char1.count
+        @charNum = char.chars.count
         
-        char.char1.each do |l|
+        char.chars.each do |l|
             
             if @word.include?(l) && ((@c.include? l) == false)
                 @c.push(l)
@@ -44,12 +44,12 @@ class HangpersonGame
     def word_with_guesses
         
         if @num == 0
-            @word.char1.each do |l|
+            @word.chars.each do |l|
                 @word_with.push("-")
             end
             @num = 1
         end
-        a= @word.char1
+        a= @word.chars
         b=@c.join.to_s
         #check if the guesses chars match the word chars then display it in word_with_guesses
         for i in 0..b.size - 1
